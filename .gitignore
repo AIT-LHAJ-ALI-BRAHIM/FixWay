@@ -1,0 +1,16 @@
+# Root .gitignore for FixWay project
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Sub-projects (git will respect nested .gitignore files)
+# fixway_app/ has its own .gitignore

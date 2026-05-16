@@ -9,13 +9,11 @@ class SignupNameScreen extends StatefulWidget {
 }
 
 class _SignupNameScreenState extends State<SignupNameScreen> {
-  final TextEditingController _firstNameController = TextEditingController();
-  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   void dispose() {
-    _firstNameController.dispose();
-    _lastNameController.dispose();
+    _usernameController.dispose();
     super.dispose();
   }
 
@@ -50,18 +48,10 @@ class _SignupNameScreenState extends State<SignupNameScreen> {
               ),
               const SizedBox(height: 48),
               TextField(
-                controller: _firstNameController,
+                controller: _usernameController,
                 decoration: const InputDecoration(
-                  labelText: 'First Name',
-                  hintText: 'e.g. John',
-                ),
-              ),
-              const SizedBox(height: 24),
-              TextField(
-                controller: _lastNameController,
-                decoration: const InputDecoration(
-                  labelText: 'Last Name',
-                  hintText: 'e.g. Doe',
+                  labelText: 'Username',
+                  hintText: 'e.g. johndoe',
                 ),
               ),
               const Spacer(),

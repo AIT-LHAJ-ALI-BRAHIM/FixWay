@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 48),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (route) => false);
+                  Navigator.pushNamed(context, AppRoutes.loginOtp);
                 },
                 child: const Text('Login'),
               ),

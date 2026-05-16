@@ -8,10 +8,13 @@ import '../features/auth/screens/signup_phone_screen.dart';
 import '../features/auth/screens/otp_verification_screen.dart';
 import '../features/auth/screens/signup_password_screen.dart';
 import '../features/auth/screens/login_screen.dart';
+import '../features/auth/screens/login_otp_screen.dart';
 import '../features/auth/screens/forgot_password_phone_screen.dart';
 import '../features/auth/screens/forgot_password_otp_screen.dart';
 import '../features/auth/screens/forgot_password_new_password_screen.dart';
-// import '../features/home/screens/home_screen.dart';
+import '../features/auth/screens/signup_gender_screen.dart';
+import '../features/auth/screens/signup_language_screen.dart';
+import '../features/home/screens/home_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -21,6 +24,9 @@ class AppRoutes {
   static const String signupPhone = '/signup/phone';
   static const String signupOtp = '/signup/otp';
   static const String signupPassword = '/signup/password';
+  static const String signupGender = '/signup/gender';
+  static const String signupLanguage = '/signup/language';
+  static const String loginOtp = '/login/otp';
   static const String forgotPasswordPhone = '/forgot-password/phone';
   static const String forgotPasswordOtp = '/forgot-password/otp';
   static const String forgotPasswordNew = '/forgot-password/new';
@@ -42,6 +48,12 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const OtpVerificationScreen());
       case signupPassword:
         return MaterialPageRoute(builder: (_) => const SignupPasswordScreen());
+      case signupGender:
+        return MaterialPageRoute(builder: (_) => const SignupGenderScreen());
+      case signupLanguage:
+        return MaterialPageRoute(builder: (_) => const SignupLanguageScreen());
+      case loginOtp:
+        return MaterialPageRoute(builder: (_) => const LoginOtpScreen());
       case forgotPasswordPhone:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordPhoneScreen());
       case forgotPasswordOtp:
@@ -49,8 +61,7 @@ class AppRoutes {
       case forgotPasswordNew:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordNewPasswordScreen());
       case home:
-        // return MaterialPageRoute(builder: (_) => const HomeScreen());
-        return MaterialPageRoute(builder: (_) => const Scaffold(body: Center(child: Text('Home'))));
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

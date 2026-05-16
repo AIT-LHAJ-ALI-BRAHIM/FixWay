@@ -175,8 +175,7 @@ erDiagram
   phone: "+212612345678",
   phoneVerified: true,
   email: "user@example.com",
-  firstName: "Ahmed",
-  lastName: "Benali",
+  username: "ahmed_benali",
   avatarUrl: "gs://fixway-app.appspot.com/avatars/{uid}/profile.jpg",
   role: "client" | "worker" | "admin",
   isActive: true,
@@ -189,6 +188,9 @@ erDiagram
   ratingCount: 42,
   jobsCompleted: 38,
   categoryIds: ["cat_plumbing", "cat_electrical"],  // worker specialties
+  ipAddress: "192.168.1.1",
+  androidId: "android_id_string",
+  idfv: "idfv_string",
   createdAt: Timestamp,
   updatedAt: Timestamp
 }
@@ -261,6 +263,20 @@ erDiagram
     "gs://fixway-app.appspot.com/requests/{request_id}/photo_1.jpg",
     "gs://fixway-app.appspot.com/requests/{request_id}/photo_2.jpg"
   ],
+  securityChecks: {
+    textModeration: {
+      isProfane: false,         // Analysed via alt-profanity-check Python package
+      profanityProbability: 0.05
+    },
+    imageModeration: {
+      isSafe: true,             // Analysed via Google Cloud Vision (SafeSearch)
+      adult: "VERY_UNLIKELY",
+      violence: "VERY_UNLIKELY",
+      racy: "VERY_UNLIKELY"
+    },
+    status: "pending" | "approved" | "flagged" | "rejected",
+    processedAt: Timestamp
+  },
   createdAt: Timestamp,
   updatedAt: Timestamp,
   expiresAt: Timestamp
@@ -347,7 +363,6 @@ erDiagram
   reviewerId: "uid_string",     // client
   revieweeId: "uid_string",     // worker
   rating: 5,                    // 1–5
-  comment: "Great work!",
   createdAt: Timestamp
 }
 // Index: (revieweeId, createdAt)

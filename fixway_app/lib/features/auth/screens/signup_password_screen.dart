@@ -70,10 +70,9 @@ class _SignupPasswordScreenState extends State<SignupPasswordScreen> {
               const Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  // Final step of signup: go to home
-                  Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (route) => false);
+                  Navigator.pushNamed(context, AppRoutes.signupGender);
                 },
-                child: const Text('Complete Signup'),
+                child: const Text('Continue'),
               ),
               const SizedBox(height: 24),
             ],
